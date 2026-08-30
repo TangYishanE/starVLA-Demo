@@ -1,0 +1,39 @@
+{
+  "state": {
+    "joint_positions": {
+      "original_key": "observation.state",
+      "start": 0,
+      "end": 6
+    },
+    "gripper_width": {
+      "original_key": "observation.state",
+      "start": 6,
+      "end": 7
+    }
+  },
+  "action": {
+    "ee_positions": {
+      "original_key": "action",
+      "start": 0,
+      "end": 7
+    },
+    "gripper_width": {
+      "original_key": "action",
+      "start": 7,
+      "end": 8
+    }
+  },
+  "video": {
+    "cam_global": {
+      "original_key": "observation.images.cam_global"
+    },
+    "cam_arm": {
+      "original_key": "observation.images.cam_arm"
+    }
+  },
+  "annotation": {
+    "human.task_description": {
+      "original_key": "task_index"
+    }
+  }
+}

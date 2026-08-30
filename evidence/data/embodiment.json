@@ -1,0 +1,8 @@
+{
+  "robot_name": "UR5",
+  "robot_type": "UR5",
+  "record_frequency": 30,
+  "body_controller_frequency": 30,
+  "hand_controller_frequency": 30,
+  "embodiment_tag": "ur5_robochallenge"
+}

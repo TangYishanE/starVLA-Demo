@@ -1,0 +1,18 @@
+# ==== Secrets / credentials — NEVER commit ====
+CUHK_Server/
+**/*.key
+**/*.pem
+**/*.ppk
+**/id_rsa*
+**/id_ed25519*
+**/*.ovpn
+
+# ==== Nested repos / local config ====
+starVLA/
+.vscode/
+
+# ==== Transient / large ====
+*.log
+*.tar
+*.gz
+*.zip

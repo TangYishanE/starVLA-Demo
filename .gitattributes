@@ -1,0 +1,12 @@
+# Exclude secrets dir from any archive/export
+CUHK_Server/** export-ignore -diff -merge
+
+# Line endings
+* text=auto
+*.md text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.sh text eol=lf
+*.py text eol=lf

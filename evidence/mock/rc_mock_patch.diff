@@ -1,0 +1,43 @@
+diff --git a/mock_server/mock_settings.py b/mock_server/mock_settings.py
+index 88d09d0..f393963 100644
+--- a/mock_server/mock_settings.py
++++ b/mock_server/mock_settings.py
+@@ -1,14 +1,5 @@
+ # -*- coding: utf-8 -*-
+ REALSENSE_DEVICE_IDS = None
+ 
+-ROBOT_TAG = 'aloha'
+-RECORD_DATA_DIR = '../20260413/aloha/pack_the_toothbrush_holder'
+-
+-# ROBOT_TAG = 'w1'
+-# RECORD_DATA_DIR = '../20260413/w1/sweep_the_trash'
+-
+-# ROBOT_TAG = 'ur5'
+-# RECORD_DATA_DIR = '../20260413/ur5/arrange_fruits'
+-
+-# ROBOT_TAG = 'arx5'
+-# RECORD_DATA_DIR = '../20260413/arx5/hang_the_cup'
++ROBOT_TAG = "ur5"
++RECORD_DATA_DIR = "../20260413/ur5/arrange_fruits"
+diff --git a/robot/interface_client.py b/robot/interface_client.py
+index a4ae1f4..789399e 100644
+--- a/robot/interface_client.py
++++ b/robot/interface_client.py
+@@ -59,7 +59,7 @@ class InterfaceClient:
+         self.robot_id = robot_id
+         self.robot_url = base_url + f"/robots/{robot_id}/direct"
+         if self.mock:
+-            self.robot_url = mock_url + "/"
++            self.robot_url = mock_url
+         self.clock_offset = self.cal_clockoffset()
+         print(f"clock jitter:{self.clock_offset}s")
+     
+@@ -119,7 +119,7 @@ class InterfaceClient:
+         return response
+     
+     def end_motion(self):
+-        url = f"{self.robot_url}/stop_motion"
++        url = f"{self.robot_url}/end_motion"
+         response = self._get(url)
+         return response
+     
