@@ -1,0 +1,9 @@
+[Sun Aug 30 21:43:13 UTC 2026] g1 dry-run chain started; waiting for franka training...
+[Sun Aug 30 22:09:15 UTC 2026] franka training finished
+[Sun Aug 30 22:09:30 UTC 2026] starting G1 policy server on :5694
+[Sun Aug 30 22:10:18 UTC 2026] server ready
+[Sun Aug 30 22:10:18 UTC 2026] running mock_g1_controller
+[Sun Aug 30 22:10:29 UTC 2026] mock exit=0
+[Sun Aug 30 22:10:29 UTC 2026] running replay_lerobot_episode
+[Sun Aug 30 22:11:28 UTC 2026] replay exit=0
+[Sun Aug 30 22:11:28 UTC 2026] g1 dry-run chain done (mock=0 replay=0)

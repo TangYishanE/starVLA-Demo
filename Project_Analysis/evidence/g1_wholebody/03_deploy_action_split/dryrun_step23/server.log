@@ -1,0 +1,66 @@
+/225010261/StarVLA/envs/starvla-cu128/lib/python3.10/site-packages/albumentations/__init__.py:13: UserWarning: A new version of Albumentations is available: 2.0.8 (you have 1.4.18). Upgrade using: pip install -U albumentations. To disable automatic update checks, set the environment variable NO_ALBUMENTATIONS_UPDATE to 1.
+  check_for_updates()
+08/30 [22:09:37] WARNING  | >>  DataConfig for                    registry.py:70
+                          robot_type='ur5_robochallenge' has no                 
+                          `embodiment_tag` classvar; defaulting                 
+                          to EmbodimentTag.NEW_EMBODIMENT.                      
+                 WARNING  | >>  DataConfig for                    registry.py:70
+                          robot_type='arx5_robochallenge' has no                
+                          `embodiment_tag` classvar; defaulting                 
+                          to EmbodimentTag.NEW_EMBODIMENT.                      
+                 WARNING  | >>  DataConfig for                    registry.py:70
+                          robot_type='dosw1_robochallenge' has no               
+                          `embodiment_tag` classvar; defaulting                 
+                          to EmbodimentTag.NEW_EMBODIMENT.                      
+INFO:root:PolicyServerWrapper: loading framework from /225010261/StarVLA/src/starVLA/results/Checkpoints/starvla_qwenoft_g1_sonic_smoke/checkpoints/steps_1000_pytorch_model.pt
+INFO:starVLA.model.framework.share_tools:[*] Loading from local checkpoint path `/225010261/StarVLA/src/starVLA/results/Checkpoints/starvla_qwenoft_g1_sonic_smoke/checkpoints/steps_1000_pytorch_model.pt`
+INFO:starVLA.model.framework.share_tools:[*] [apply_config_compat] normalised config from version_id=None to '0.21'
+WARNING:starVLA.model.framework.base_framework:[*] [StarVLA] Reproducibility notice: this repository is under active development. The latest code may not exactly reproduce every previously released HF checkpoint because code, configs, preprocessing, and evaluation behavior can change over time. For exact reproduction, checkout the repository revision from the checkpoint's release/training time and use its own config.
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/473 [00:00<?, ?it/s]Loading weights: 100%|██████████| 473/473 [00:00<00:00, 11671.00it/s]
+INFO:starVLA.model.framework.share_tools:[*] Loading from local checkpoint path `/225010261/StarVLA/src/starVLA/results/Checkpoints/starvla_qwenoft_g1_sonic_smoke/checkpoints/steps_1000_pytorch_model.pt`
+INFO:starVLA.model.framework.share_tools:[*] [apply_config_compat] normalised config from version_id=None to '0.21'
+INFO:starVLA.model.framework.share_tools:[*] Loading from local checkpoint path `/225010261/StarVLA/src/starVLA/results/Checkpoints/starvla_qwenoft_g1_sonic_smoke/checkpoints/steps_1000_pytorch_model.pt`
+INFO:starVLA.model.framework.share_tools:[*] [apply_config_compat] normalised config from version_id=None to '0.21'
+INFO:deployment.model_server.policy_norm_processor:PolicyNormProcessor ready: robot_type=unitree_g1_sonic_dex3, unnorm_key=new_embodiment, action_keys=['action.motion_token', 'action.left_hand_joints', 'action.right_hand_joints'] (dims=[64, 7, 7]), state_keys=['state.left_leg', 'state.right_leg', 'state.waist', 'state.left_arm', 'state.left_hand', 'state.right_arm', 'state.right_hand', 'state.left_wrist_pos', 'state.left_wrist_abs_quat', 'state.right_wrist_pos', 'state.right_wrist_abs_quat', 'state.root_orientation', 'state.projected_gravity', 'state.cpp_rotation_offset', 'state.init_base_quat']
+INFO:root:PolicyServerWrapper ready: action_chunk_size=8, default_unnorm_key=new_embodiment, available_unnorm_keys=['new_embodiment'], action_keys=['action.motion_token', 'action.left_hand_joints', 'action.right_hand_joints'], state_keys=['state.left_leg', 'state.right_leg', 'state.waist', 'state.left_arm', 'state.left_hand', 'state.right_arm', 'state.right_hand', 'state.left_wrist_pos', 'state.left_wrist_abs_quat', 'state.right_wrist_pos', 'state.right_wrist_abs_quat', 'state.root_orientation', 'state.projected_gravity', 'state.cpp_rotation_offset', 'state.init_base_quat']
+INFO:root:Creating server (host: c03cm3nlal8v-0, ip: 100.90.48.194)
+INFO:starVLA.model.framework.share_tools:[*] Loading from local checkpoint path `/225010261/StarVLA/src/starVLA/results/Checkpoints/starvla_qwenoft_g1_sonic_smoke/checkpoints/steps_1000_pytorch_model.pt`
+INFO:starVLA.model.framework.share_tools:[*] [apply_config_compat] normalised config from version_id=None to '0.21'
+INFO:deployment.model_server.policy_norm_processor:PolicyNormProcessor ready: robot_type=unitree_g1_sonic_dex3, unnorm_key=new_embodiment, action_keys=['action.motion_token', 'action.left_hand_joints', 'action.right_hand_joints'] (dims=[64, 7, 7]), state_keys=['state.left_leg', 'state.right_leg', 'state.waist', 'state.left_arm', 'state.left_hand', 'state.right_arm', 'state.right_hand', 'state.left_wrist_pos', 'state.left_wrist_abs_quat', 'state.right_wrist_pos', 'state.right_wrist_abs_quat', 'state.root_orientation', 'state.projected_gravity', 'state.cpp_rotation_offset', 'state.init_base_quat']
+WARNING:root:[TRAIN/TEST CONSISTENCY CHECK] serving ckpt=/225010261/StarVLA/src/starVLA/results/Checkpoints/starvla_qwenoft_g1_sonic_smoke/checkpoints/steps_1000_pytorch_model.pt — verify eval observations (state / image size / image count / image order / action normalization) match the training config. metadata={'env': 'starvla_policy_server', 'ckpt_path': '/225010261/StarVLA/src/starVLA/results/Checkpoints/starvla_qwenoft_g1_sonic_smoke/checkpoints/steps_1000_pytorch_model.pt', 'action_chunk_size': 8, 'available_unnorm_keys': ['new_embodiment'], 'default_unnorm_key': 'new_embodiment', 'training_data_mix': 'unitree_g1_test_sonic', 'training_obs_image_size': [224, 224], 'eval_image_contract': 'Eval clients must explicitly choose image count and order. The server does not infer or reorder camera views from training config.', 'action_keys': ['action.motion_token', 'action.left_hand_joints', 'action.right_hand_joints'], 'state_keys': ['state.left_leg', 'state.right_leg', 'state.waist', 'state.left_arm', 'state.left_hand', 'state.right_arm', 'state.right_hand', 'state.left_wrist_pos', 'state.left_wrist_abs_quat', 'state.right_wrist_pos', 'state.right_wrist_abs_quat', 'state.root_orientation', 'state.projected_gravity', 'state.cpp_rotation_offset', 'state.init_base_quat']}
+INFO:root:server running ... metadata={'env': 'starvla_policy_server', 'ckpt_path': '/225010261/StarVLA/src/starVLA/results/Checkpoints/starvla_qwenoft_g1_sonic_smoke/checkpoints/steps_1000_pytorch_model.pt', 'action_chunk_size': 8, 'available_unnorm_keys': ['new_embodiment'], 'default_unnorm_key': 'new_embodiment', 'training_data_mix': 'unitree_g1_test_sonic', 'training_obs_image_size': [224, 224], 'eval_image_contract': 'Eval clients must explicitly choose image count and order. The server does not infer or reorder camera views from training config.', 'action_keys': ['action.motion_token', 'action.left_hand_joints', 'action.right_hand_joints'], 'state_keys': ['state.left_leg', 'state.right_leg', 'state.waist', 'state.left_arm', 'state.left_hand', 'state.right_arm', 'state.right_hand', 'state.left_wrist_pos', 'state.left_wrist_abs_quat', 'state.right_wrist_pos', 'state.right_wrist_abs_quat', 'state.root_orientation', 'state.projected_gravity', 'state.cpp_rotation_offset', 'state.init_base_quat']}
+INFO:websockets.server:server listening on 0.0.0.0:5694
+ERROR:websockets.server:opening handshake failed
+Traceback (most recent call last):
+  File "/225010261/StarVLA/envs/starvla-cu128/lib/python3.10/site-packages/websockets/http11.py", line 138, in parse
+    request_line = yield from parse_line(read_line)
+  File "/225010261/StarVLA/envs/starvla-cu128/lib/python3.10/site-packages/websockets/http11.py", line 320, in parse_line
+    line = yield from read_line(MAX_LINE_LENGTH)
+  File "/225010261/StarVLA/envs/starvla-cu128/lib/python3.10/site-packages/websockets/streams.py", line 46, in read_line
+    raise EOFError(f"stream ends after {p} bytes, before end of line")
+EOFError: stream ends after 0 bytes, before end of line
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/225010261/StarVLA/envs/starvla-cu128/lib/python3.10/site-packages/websockets/server.py", line 547, in parse
+    request = yield from Request.parse(
+  File "/225010261/StarVLA/envs/starvla-cu128/lib/python3.10/site-packages/websockets/http11.py", line 140, in parse
+    raise EOFError("connection closed while reading HTTP request line") from exc
+EOFError: connection closed while reading HTTP request line
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/225010261/StarVLA/envs/starvla-cu128/lib/python3.10/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/225010261/StarVLA/envs/starvla-cu128/lib/python3.10/site-packages/websockets/asyncio/server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+websockets.exceptions.InvalidMessage: did not receive a valid HTTP request
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 44640) opened
+INFO:root:Connection from ('127.0.0.1', 44640) closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 39600) opened
+INFO:root:Connection from ('127.0.0.1', 39600) closed

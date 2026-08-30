@@ -1,0 +1,30 @@
+[2026-08-30 22:10:18,771] INFO root: Waiting for server at ws://127.0.0.1:5694...
+[2026-08-30 22:10:18,774] WARNING root: 
+============================================================
+  [TRAIN/TEST CONSISTENCY CHECK] read before trusting results
+------------------------------------------------------------
+  Make sure the EVAL observation matches TRAINING for:
+    - state    : whether proprioceptive state is fed (use_state)
+                 and its dimension / ordering
+    - img size : resize / crop resolution (e.g. 224x224)
+    - img count: how many camera views are fed to the model
+    - img order: the ordering of those camera views
+    - horizon  : action chunk size / action horizon
+  A mismatch on ANY of these silently lowers the success rate.
+  Cross-check the values below against your training config.
+  The client will NOT infer or reorder camera views for you.
+============================================================
+[2026-08-30 22:10:18,774] WARNING root: [TRAIN/TEST CONSISTENCY CHECK] server metadata: {'env': 'starvla_policy_server', 'ckpt_path': '/225010261/StarVLA/src/starVLA/results/Checkpoints/starvla_qwenoft_g1_sonic_smoke/checkpoints/steps_1000_pytorch_model.pt', 'action_chunk_size': 8, 'available_unnorm_keys': ['new_embodiment'], 'default_unnorm_key': 'new_embodiment', 'training_data_mix': 'unitree_g1_test_sonic', 'training_obs_image_size': [224, 224], 'eval_image_contract': 'Eval clients must explicitly choose image count and order. The server does not infer or reorder camera views from training config.', 'action_keys': ['action.motion_token', 'action.left_hand_joints', 'action.right_hand_joints'], 'state_keys': ['state.left_leg', 'state.right_leg', 'state.waist', 'state.left_arm', 'state.left_hand', 'state.right_arm', 'state.right_hand', 'state.left_wrist_pos', 'state.left_wrist_abs_quat', 'state.right_wrist_pos', 'state.right_wrist_abs_quat', 'state.root_orientation', 'state.projected_gravity', 'state.cpp_rotation_offset', 'state.init_base_quat']}
+[2026-08-30 22:10:18,774] INFO mock_g1_controller: connected; unnorm_key=new_embodiment
+[2026-08-30 22:10:18,776] INFO root: [TRAIN/TEST CONSISTENCY CHECK] eval request image_count=1 image_shapes=[(224, 224)] server_metadata={'env': 'starvla_policy_server', 'ckpt_path': '/225010261/StarVLA/src/starVLA/results/Checkpoints/starvla_qwenoft_g1_sonic_smoke/checkpoints/steps_1000_pytorch_model.pt', 'action_chunk_size': 8, 'available_unnorm_keys': ['new_embodiment'], 'default_unnorm_key': 'new_embodiment', 'training_data_mix': 'unitree_g1_test_sonic', 'training_obs_image_size': [224, 224], 'eval_image_contract': 'Eval clients must explicitly choose image count and order. The server does not infer or reorder camera views from training config.', 'action_keys': ['action.motion_token', 'action.left_hand_joints', 'action.right_hand_joints'], 'state_keys': ['state.left_leg', 'state.right_leg', 'state.waist', 'state.left_arm', 'state.left_hand', 'state.right_arm', 'state.right_hand', 'state.left_wrist_pos', 'state.left_wrist_abs_quat', 'state.right_wrist_pos', 'state.right_wrist_abs_quat', 'state.root_orientation', 'state.projected_gravity', 'state.cpp_rotation_offset', 'state.init_base_quat']}. The benchmark interface is responsible for camera order; verify this order manually against the checkpoint training setup.
+[2026-08-30 22:10:21,872] INFO mock_g1_controller: iter 0: T=8 | motion_token[min=-0.375 max=0.312] left_hand[min=-0.000 max=0.900] right_hand[min=-0.003 max=0.898] | latency=3095.6ms
+[2026-08-30 22:10:21,872] WARNING mock_g1_controller: inference (3096ms) slower than publish period (500ms) -> stale-action risk
+[2026-08-30 22:10:23,574] INFO mock_g1_controller: iter 1: T=8 | motion_token[min=-0.375 max=0.312] left_hand[min=-0.000 max=0.900] right_hand[min=-0.003 max=0.898] | latency=1701.6ms
+[2026-08-30 22:10:23,574] WARNING mock_g1_controller: inference (1702ms) slower than publish period (500ms) -> stale-action risk
+[2026-08-30 22:10:25,765] INFO mock_g1_controller: iter 2: T=8 | motion_token[min=-0.375 max=0.312] left_hand[min=-0.000 max=0.900] right_hand[min=-0.003 max=0.898] | latency=2190.8ms
+[2026-08-30 22:10:25,767] WARNING mock_g1_controller: inference (2191ms) slower than publish period (500ms) -> stale-action risk
+[2026-08-30 22:10:27,568] INFO mock_g1_controller: iter 3: T=8 | motion_token[min=-0.375 max=0.312] left_hand[min=-0.000 max=0.900] right_hand[min=-0.003 max=0.898] | latency=1801.1ms
+[2026-08-30 22:10:27,568] WARNING mock_g1_controller: inference (1801ms) slower than publish period (500ms) -> stale-action risk
+[2026-08-30 22:10:29,372] INFO mock_g1_controller: iter 4: T=8 | motion_token[min=-0.375 max=0.312] left_hand[min=-0.000 max=0.900] right_hand[min=-0.003 max=0.898] | latency=1803.5ms
+[2026-08-30 22:10:29,372] WARNING mock_g1_controller: inference (1803ms) slower than publish period (500ms) -> stale-action risk
+[2026-08-30 22:10:29,372] INFO mock_g1_controller: OK ✅  mock controller consumed 5 chunks -> 64/7/7 split valid
