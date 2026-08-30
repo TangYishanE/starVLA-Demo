@@ -1,0 +1,82 @@
+diff --git a/examples/realRobots/Realman/train_files/data_registry/data_config.py b/examples/realRobots/Realman/train_files/data_registry/data_config.py
+index e5d61bf..b57cb2e 100644
+--- a/examples/realRobots/Realman/train_files/data_registry/data_config.py
++++ b/examples/realRobots/Realman/train_files/data_registry/data_config.py
+@@ -11,7 +11,7 @@ but this recipe does not map them. The model-facing fields are:
+ - ``action.gripper_close``: one absolute gripper target
+ 
+ The YAML applies delta conversion only to ``action.delta_joints``. The gripper is deliberately
+-excluded and therefore remains absolute. Replace ``<your_dataset>`` in
++excluded and therefore remains absolute. Replace ``panda-open-drawer`` in
+ ``DATASET_NAMED_MIXTURES`` with the directory name of a compatible LeRobot dataset.
+ """
+ 
+@@ -110,7 +110,7 @@ ROBOT_TYPE_TO_EMBODIMENT_TAG = {}
+ DATASET_NAMED_MIXTURES = {
+     "realman_example": [
+         (
+-            "<your_dataset>",
++            "panda-open-drawer",
+             1.0,
+             "realman_rm75_delta_joints",
+         ),
+@@ -119,7 +119,7 @@ DATASET_NAMED_MIXTURES = {
+     # action window matches framework.horizon (see RealmanRM75DPDataConfig).
+     "realman_example_dp": [
+         (
+-            "<your_dataset>",
++            "panda-open-drawer",
+             1.0,
+             "realman_rm75_delta_joints_dp",
+         ),
+diff --git a/examples/realRobots/Realman/train_files/train_realman_act.yaml b/examples/realRobots/Realman/train_files/train_realman_act.yaml
+index f6a6189..f2ea226 100644
+--- a/examples/realRobots/Realman/train_files/train_realman_act.yaml
++++ b/examples/realRobots/Realman/train_files/train_realman_act.yaml
+@@ -47,11 +47,11 @@ datasets:
+     include_state: true
+ 
+     # Parent directory of the <your_dataset> directory registered in data_config.py.
+-    data_root_dir: /path/to/lerobot_datasets
++    data_root_dir: playground/Datasets/Realman/lerobot
+     data_mix: realman_example
+ 
+     # Apply deltas to the joint command only; the gripper target remains absolute.
+-    action_mode: "delta"
++    action_mode: "abs"  # NVIDIA action already delta
+     action_mode_apply_keys: ["action.delta_joints"]
+     action_mode_state_map:
+       "action.delta_joints": "state.joints"
+diff --git a/examples/realRobots/Realman/train_files/train_realman_dp.sh b/examples/realRobots/Realman/train_files/train_realman_dp.sh
+index 39ee162..15b0ba5 100755
+--- a/examples/realRobots/Realman/train_files/train_realman_dp.sh
++++ b/examples/realRobots/Realman/train_files/train_realman_dp.sh
+@@ -21,7 +21,7 @@ Framework_name=DiffusionPolicy
+ freeze_module_list=""
+ config_yaml=./examples/realRobots/Realman/train_files/train_realman_dp.yaml
+ data_root_dir=${DATA_ROOT_DIR:-/path/to/lerobot_datasets}
+-data_mix=${DATA_MIX:-realman_example}
++data_mix=${DATA_MIX:-realman_example_dp}
+ run_root_dir=${RUN_ROOT_DIR:-./results/Checkpoints}
+ run_id=${RUN_ID:-$(date +%m%d)_realman_dp_smoke}
+ ################################################################################
+diff --git a/examples/realRobots/Realman/train_files/train_realman_dp.yaml b/examples/realRobots/Realman/train_files/train_realman_dp.yaml
+index 8079db6..d1639d8 100644
+--- a/examples/realRobots/Realman/train_files/train_realman_dp.yaml
++++ b/examples/realRobots/Realman/train_files/train_realman_dp.yaml
+@@ -48,13 +48,13 @@ datasets:
+     include_state: true
+ 
+     # Parent directory of the <your_dataset> directory registered in data_config.py.
+-    data_root_dir: /path/to/lerobot_datasets
++    data_root_dir: playground/Datasets/Realman/lerobot
+     # DP-specific mixture: its action window equals framework.horizon (16) so training
+     # targets are the immediate actions after each sampled observation.
+     data_mix: realman_example_dp
+ 
+     # Apply deltas to the joint command only; the gripper target remains absolute.
+-    action_mode: "delta"
++    action_mode: "abs"  # NVIDIA action already delta
+     action_mode_apply_keys: ["action.delta_joints"]
+     action_mode_state_map:
+       "action.delta_joints": "state.joints"
