@@ -1,0 +1,47 @@
+datasets:
+  vla_data:
+    action_mode: abs
+    action_mode_apply_keys:
+    - action.delta_joints
+    data_mix: realman_example
+    data_root_dir: playground/Datasets/Realman/lerobot
+    dataset_py: lerobot_datasets
+    per_device_batch_size: 1
+    video_backend: torchvision_av
+framework:
+  action_dim: 8
+  chunk_size: 50
+  image_keys:
+  - cam0_rgb
+  - cam1_rgb
+  image_size:
+  - 224
+  - 224
+  n_obs_steps: 1
+  name: ACT
+  pretrained_backbone_weights: ResNet18_Weights.IMAGENET1K_V1
+  state_dim: 8
+output_dir: ./results/Checkpoints/realman_act_smoke
+run_id: realman_act_smoke
+run_root_dir: ./results/Checkpoints
+seed: 42
+trainer:
+  eval_interval: 100000
+  freeze_modules: ''
+  gradient_clipping: 1.0
+  learning_rate:
+    action_model: 0.0001
+    base: 2.5e-05
+  logging_frequency: 10
+  lr_scheduler_type: cosine_with_min_lr
+  max_train_steps: 100
+  num_warmup_steps: 200
+  optimizer:
+    betas:
+    - 0.9
+    - 0.95
+    eps: 1.0e-08
+    weight_decay: 1.0e-08
+  save_interval: 100
+  scheduler_specific_kwargs:
+    min_lr: 1.0e-06

@@ -1,0 +1,1 @@
+{"status": "pass", "upload": "ok", "act_ckpt": "results/Checkpoints/realman_act_smoke/checkpoints/steps_100_pytorch_model.pt", "dp_ckpt": "results/Checkpoints/realman_dp_smoke/checkpoints/steps_100_pytorch_model.pt", "ts": "2026-08-30T22:59:31Z"}

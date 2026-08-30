@@ -1,0 +1,13 @@
+[2026-08-30 22:32:34] chain started; waiting for franka + G1 tasks
+[2026-08-30 22:32:34] franka + G1 finished
+[2026-08-30 22:32:34] GPU free
+[2026-08-30 22:32:34] dataset OK
+[2026-08-30 22:32:34] adapt OK
+[2026-08-30 22:32:41] dataloader gate OK
+[2026-08-30 22:32:56] forward gates OK
+[2026-08-30 22:32:56] ACT 100-step training
+[2026-08-30 22:34:36] ACT train OK
+[2026-08-30 22:34:36] DP 100-step training
+[2026-08-30 22:36:31] DP train OK
+[2026-08-30 22:37:21] self-test pass=0
+[2026-08-30 22:37:22] chain done

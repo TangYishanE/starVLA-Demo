@@ -1,0 +1,57 @@
+/225010261/StarVLA/envs/starvla-cu128/lib/python3.10/site-packages/albumentations/__init__.py:13: UserWarning: A new version of Albumentations is available: 2.0.8 (you have 1.4.18). Upgrade using: pip install -U albumentations. To disable automatic update checks, set the environment variable NO_ALBUMENTATIONS_UPDATE to 1.
+  check_for_updates()
+08/30 [22:57:26] WARNING  | >>  DataConfig for                    registry.py:70
+                          robot_type='ur5_robochallenge' has no                 
+                          `embodiment_tag` classvar; defaulting                 
+                          to EmbodimentTag.NEW_EMBODIMENT.                      
+                 WARNING  | >>  DataConfig for                    registry.py:70
+                          robot_type='arx5_robochallenge' has no                
+                          `embodiment_tag` classvar; defaulting                 
+                          to EmbodimentTag.NEW_EMBODIMENT.                      
+                 WARNING  | >>  DataConfig for                    registry.py:70
+                          robot_type='dosw1_robochallenge' has no               
+                          `embodiment_tag` classvar; defaulting                 
+                          to EmbodimentTag.NEW_EMBODIMENT.                      
+                 INFO     | >> [*] Loading from local         share_tools.py:370
+                          checkpoint path                                       
+                          `results/Checkpoints/realman_dp_smo                   
+                          ke/checkpoints/steps_100_pytorch_mo                   
+                          del.pt`                                               
+                 INFO     | >> [*]  normalised config from    share_tools.py:522
+                          version_id=None to '0.21'                             
+                 INFO     | >> PolicyNormProcessor  policy_norm_processor.py:316
+                          ready:                                                
+                          robot_type=realman_rm75_d                             
+                          elta_joints_dp,                                       
+                          unnorm_key=new_embodiment                             
+                          ,                                                     
+                          action_keys=['action.delt                             
+                          a_joints',                                            
+                          'action.gripper_close']                               
+                          (dims=[7, 1]),                                        
+                          state_keys=['state.joints                             
+                          ', 'state.gripper']                                   
+                 INFO     | >> [*] Loading from local         share_tools.py:370
+                          checkpoint path                                       
+                          `results/Checkpoints/realman_dp_smo                   
+                          ke/checkpoints/steps_100_pytorch_mo                   
+                          del.pt`                                               
+                 INFO     | >> [*]  normalised config from    share_tools.py:522
+                          version_id=None to '0.21'                             
+08/30 [22:57:29] WARNING  | >> [*] [StarVLA]               base_framework.py:110
+                          Reproducibility notice: this                          
+                          repository is under active                            
+                          development. The latest code may                      
+                          not exactly reproduce every                           
+                          previously released HF                                
+                          checkpoint because code,                              
+                          configs, preprocessing, and                           
+                          evaluation behavior can change                        
+                          over time. For exact                                  
+                          reproduction, checkout the                            
+                          repository revision from the                          
+                          checkpoint's release/training                         
+                          time and use its own config.                          
+08/30 [22:57:32] INFO     | >> number of parameters:   conditional_unet1d.py:169
+                          1.227940e+08                                          
+[PASS] DiffusionPolicy: (8, 8) finite, action[0]=[ 0.1315 -0.0077 -0.0265 -0.121  -0.1582 -0.0088 -0.148  -1.    ]
