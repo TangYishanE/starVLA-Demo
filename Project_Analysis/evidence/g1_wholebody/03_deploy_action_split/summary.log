@@ -1,0 +1,9 @@
+=== CHAIN START 2026-08-30T20:32:03Z ===
+[train] launch 20:32:03
+[train] done 21:13:52
+[train] checkpoint: /225010261/StarVLA/src/starVLA/results/Checkpoints/starvla_qwenoft_g1_sonic_smoke/checkpoints/steps_1000_pytorch_model.pt
+[server] launch on :5694 21:13:52
+[server] ready 21:14:55
+[selftest] run 21:14:55
+[selftest] exit=0 21:15:06
+=== CHAIN END 2026-08-30T21:15:06Z ===

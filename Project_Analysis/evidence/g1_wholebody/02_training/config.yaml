@@ -1,0 +1,48 @@
+datasets:
+  vla_data:
+    action_mode: abs
+    data_mix: unitree_g1_test_sonic
+    data_root_dir: playground/Datasets/UnitreeG1_WholeBody/lerobot
+    dataset_py: lerobot_datasets
+    delete_pause_frame: false
+    obs_image_size:
+    - 224
+    - 224
+    per_device_batch_size: 1
+    video_backend: torchvision_av
+framework:
+  action_model:
+    action_dim: 78
+    action_hidden_dim: 1024
+    action_horizon: 8
+    action_model_type: MLP
+  name: QwenOFT
+  qwenvl:
+    attn_implementation: sdpa
+    base_vlm: ./playground/Pretrained_models/Qwen3.5-0.8B
+output_dir: ./results/Checkpoints/starvla_qwenoft_g1_sonic_smoke
+run_id: starvla_qwenoft_g1_sonic_smoke
+run_root_dir: ./results/Checkpoints
+seed: 42
+trainer:
+  eval_interval: 500
+  freeze_modules: ''
+  gradient_clipping: 1.0
+  learning_rate:
+    action_model: 0.0001
+    base: 2.0e-05
+    qwen_vl_interface: 1.0e-05
+  logging_frequency: 10
+  lr_scheduler_type: cosine_with_min_lr
+  max_train_steps: 1000
+  num_warmup_steps: 50
+  optimizer:
+    betas:
+    - 0.9
+    - 0.95
+    eps: 1.0e-08
+    weight_decay: 1.0e-08
+  save_format: pt
+  save_interval: 200
+  scheduler_specific_kwargs:
+    min_lr: 1.0e-06

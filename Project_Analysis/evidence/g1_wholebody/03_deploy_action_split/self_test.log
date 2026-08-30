@@ -1,0 +1,26 @@
+[2026-08-30 21:14:55,616] INFO root: Waiting for server at ws://127.0.0.1:5694...
+[2026-08-30 21:14:55,620] WARNING root: 
+============================================================
+  [TRAIN/TEST CONSISTENCY CHECK] read before trusting results
+------------------------------------------------------------
+  Make sure the EVAL observation matches TRAINING for:
+    - state    : whether proprioceptive state is fed (use_state)
+                 and its dimension / ordering
+    - img size : resize / crop resolution (e.g. 224x224)
+    - img count: how many camera views are fed to the model
+    - img order: the ordering of those camera views
+    - horizon  : action chunk size / action horizon
+  A mismatch on ANY of these silently lowers the success rate.
+  Cross-check the values below against your training config.
+  The client will NOT infer or reorder camera views for you.
+============================================================
+[2026-08-30 21:14:55,621] WARNING root: [TRAIN/TEST CONSISTENCY CHECK] server metadata: {'env': 'starvla_policy_server', 'ckpt_path': '/225010261/StarVLA/src/starVLA/results/Checkpoints/starvla_qwenoft_g1_sonic_smoke/checkpoints/steps_1000_pytorch_model.pt', 'action_chunk_size': 8, 'available_unnorm_keys': ['new_embodiment'], 'default_unnorm_key': 'new_embodiment', 'training_data_mix': 'unitree_g1_test_sonic', 'training_obs_image_size': [224, 224], 'eval_image_contract': 'Eval clients must explicitly choose image count and order. The server does not infer or reorder camera views from training config.', 'action_keys': ['action.motion_token', 'action.left_hand_joints', 'action.right_hand_joints'], 'state_keys': ['state.left_leg', 'state.right_leg', 'state.waist', 'state.left_arm', 'state.left_hand', 'state.right_arm', 'state.right_hand', 'state.left_wrist_pos', 'state.left_wrist_abs_quat', 'state.right_wrist_pos', 'state.right_wrist_abs_quat', 'state.root_orientation', 'state.projected_gravity', 'state.cpp_rotation_offset', 'state.init_base_quat']}
+[2026-08-30 21:14:55,621] INFO g1_self_test: connected to policy server; unnorm_key=new_embodiment
+[2026-08-30 21:14:55,621] INFO g1_self_test: server_meta={'env': 'starvla_policy_server', 'ckpt_path': '/225010261/StarVLA/src/starVLA/results/Checkpoints/starvla_qwenoft_g1_sonic_smoke/checkpoints/steps_1000_pytorch_model.pt', 'action_chunk_size': 8, 'available_unnorm_keys': ['new_embodiment'], 'default_unnorm_key': 'new_embodiment', 'training_data_mix': 'unitree_g1_test_sonic', 'training_obs_image_size': [224, 224], 'eval_image_contract': 'Eval clients must explicitly choose image count and order. The server does not infer or reorder camera views from training config.', 'action_keys': ['action.motion_token', 'action.left_hand_joints', 'action.right_hand_joints'], 'state_keys': ['state.left_leg', 'state.right_leg', 'state.waist', 'state.left_arm', 'state.left_hand', 'state.right_arm', 'state.right_hand', 'state.left_wrist_pos', 'state.left_wrist_abs_quat', 'state.right_wrist_pos', 'state.right_wrist_abs_quat', 'state.root_orientation', 'state.projected_gravity', 'state.cpp_rotation_offset', 'state.init_base_quat']}
+[2026-08-30 21:14:55,622] INFO g1_self_test: synthetic obs: image=(224, 224, 3) state=(72,) lang='pick the toy on the table, and put it into the box.'
+[2026-08-30 21:14:55,622] INFO root: [TRAIN/TEST CONSISTENCY CHECK] eval request image_count=1 image_shapes=[(224, 224)] server_metadata={'env': 'starvla_policy_server', 'ckpt_path': '/225010261/StarVLA/src/starVLA/results/Checkpoints/starvla_qwenoft_g1_sonic_smoke/checkpoints/steps_1000_pytorch_model.pt', 'action_chunk_size': 8, 'available_unnorm_keys': ['new_embodiment'], 'default_unnorm_key': 'new_embodiment', 'training_data_mix': 'unitree_g1_test_sonic', 'training_obs_image_size': [224, 224], 'eval_image_contract': 'Eval clients must explicitly choose image count and order. The server does not infer or reorder camera views from training config.', 'action_keys': ['action.motion_token', 'action.left_hand_joints', 'action.right_hand_joints'], 'state_keys': ['state.left_leg', 'state.right_leg', 'state.waist', 'state.left_arm', 'state.left_hand', 'state.right_arm', 'state.right_hand', 'state.left_wrist_pos', 'state.left_wrist_abs_quat', 'state.right_wrist_pos', 'state.right_wrist_abs_quat', 'state.root_orientation', 'state.projected_gravity', 'state.cpp_rotation_offset', 'state.init_base_quat']}. The benchmark interface is responsible for camera order; verify this order manually against the checkpoint training setup.
+[2026-08-30 21:15:00,573] INFO g1_self_test: run 0: 1843.0 ms | motion_token=(8, 64) left_hand=(8, 7) right_hand=(8, 7)
+[2026-08-30 21:15:02,665] INFO g1_self_test: run 1: 2092.2 ms | motion_token=(8, 64) left_hand=(8, 7) right_hand=(8, 7)
+[2026-08-30 21:15:04,573] INFO g1_self_test: run 2: 1907.5 ms | motion_token=(8, 64) left_hand=(8, 7) right_hand=(8, 7)
+[2026-08-30 21:15:06,767] INFO g1_self_test: avg latency over 3 runs: 1947.6 ms
+[2026-08-30 21:15:06,767] INFO g1_self_test: OK ✅  policy returns 8 steps -> 64+7+7 (78D), split correct
