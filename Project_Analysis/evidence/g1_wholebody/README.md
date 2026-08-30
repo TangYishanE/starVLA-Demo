@@ -56,3 +56,21 @@
 - `02_training/` — `config.yaml`、`dataset_statistics.json`、`summary.jsonl`、checkpoint sha256
 - `03_deploy_action_split/` — `local_self_test.py`、`self_test.log`、`summary.log`、`server.log`、`run_g1_full_chain.sh`
 - 远程完整日志：`/225010261/StarVLA/src/starVLA/results/g1_wholebody_run/`
+
+---
+
+## 6. 补充：dry-run step 2/3 结果（2026-08-31，Franka 训练结束后由等待链自动执行）
+
+产物在 `03_deploy_action_split/dryrun_step23/`（mock_controller.log、replay_episode.log、server.log、g1_dryrun_wait_chain.log）。
+
+**step 3 `mock_g1_controller.py`（mock 控制器检查 64/7/7 动作组）— exit=0 ✅**
+- 5 次迭代，T=8，64/7/7 切分形状/有限性全部通过
+- motion_token 范围 [-0.375, 0.312]，left_hand [0.000, 0.900]，right_hand [-0.003, 0.898]
+- 推理延迟 ~1.7–3.1s；mock 按 2Hz 发布周期提示 stale-action 风险（真实控制器需按实际延迟调整频率）
+
+**step 2 `replay_lerobot_episode.py`（真实 episode 0 回放）— exit=0 ✅**
+- 30 帧真实观测（224×224 图 + 72D state 按 registry 顺序 + task prompt）全部成功
+- 平均推理延迟 1865.5 ms
+- **pred-vs-recorded MSE：motion_token=0.0126, left_hand=0.0000, right_hand=0.0000**
+
+**符合性结论：** 满足 example `step3_deployment/README.md`「Dry-Run Order」的 step 2/3（无真机可做的最后两步），「无真机 eval」覆盖推进到 dry-run step 3；step 4+（仿真/第三方控制器/真机）超出无真机边界。
