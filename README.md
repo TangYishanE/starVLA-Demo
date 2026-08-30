@@ -1,27 +1,29 @@
 # StarVLA-Demo
 
-StarVLA real-robot demo 复现笔记与证据归档。
+StarVLA real-robot examples 的复现笔记、计划与证据归档。
 
-## 目录结构
+## 项目目录
 
-- `Project_Analysis/` — 复现计划、资源评估、代码库分析（markdown 笔记）
-- `evidence/robochallenge/` — RoboChallenge Table30v2 `shred_paper` 单任务复现证据（配置、数据契约、loss、mock 补丁）
+每个 real-robot example 一个**以项目命名的文件夹**，统一结构：
 
-## 复现状态（2026-08-31）
+```
+<项目名>/
+  README.md     项目概述 + 复现状态
+  plans/        计划 / 评估文档
+  scripts/      复现自动化脚本（可选）
+  evidence/     复现证据（数据契约、配置、loss、补丁）
+```
 
-RoboChallenge Table30v2 `shred_paper`（UR5）单任务全流程复现完成（P0–P4）：
-
-| 阶段 | 结果 |
+| 项目 | 状态 |
 | --- | --- |
-| P1 数据 | 8.9GB raw，1016 episodes / 971436 frames，state `[7]` / action `[8]`，双相机 |
-| P2 训练 | QwenOFT（Qwen3.5-0.8B）100-step 全参数微调，loss 0.56→0.31，checkpoint 2.24GB |
-| P3 self-test | 3× `(8,8)` 动作，avg latency 1.95s |
-| P4 mock 协议 | 28 次迭代 / 62s 连续闭环 |
+| [RoboChallenge_Table30v2](RoboChallenge_Table30v2/) | ✅ P0–P4 全流程复现完成 |
+| [UnitreeG1_WholeBody](UnitreeG1_WholeBody/) | 📋 计划阶段 |
 
-代码补丁见 fork：[`TangYishanE/starVLA`](https://github.com/TangYishanE/starVLA) 分支 `repro/robochallenge-table30v2`。
+## 通用分析
 
-## 说明（边界）
+[`Project_Analysis/`](Project_Analysis/) — StarVLA 代码库分析、examples 概览、资源评估等跨项目文档。
 
-- 本次为**跨任务协议验证**：checkpoint 训练的是 `shred_paper`，但 mock 回放用官方仓库自带的唯一 UR5 记录 `arrange_fruits`（仓库无 shred_paper 回放数据）。
-- 动作输出接近动作均值（模型仅训 100 step，属冒烟验证），**不具任务语义，不证明会撕纸**。
-- 未做线上 submission、未使用实体 UR5。
+## 命名约定
+
+- 项目文件夹名对应 `starVLA/examples/realRobots/` 下的 example 目录名（如 `RoboChallenge_Table30v2`、`UnitreeG1_WholeBody`）。
+- 代码补丁 → fork `TangYishanE/starVLA`；checkpoint 等大文件 → Hugging Face；本仓库只放文档与小证据。
