@@ -1,0 +1,33 @@
+=== preflight ===
+Sun Aug 30 23:30:24 UTC 2026
+48e588114071a898b861b5eeb59d5defde2ba361
+ M examples/realRobots/Franka/train_files/data_registry/data_config.py
+ M examples/realRobots/Franka/train_files/starvla_cotrain_franka_single.yaml
+ M examples/realRobots/Realman/train_files/data_registry/data_config.py
+ M examples/realRobots/Realman/train_files/train_realman_act.yaml
+ M examples/realRobots/Realman/train_files/train_realman_dp.sh
+ M examples/realRobots/Realman/train_files/train_realman_dp.yaml
+ M examples/realRobots/RoboChallenge_table30v2/eval_files/local_self_test.py
+ M examples/realRobots/RoboChallenge_table30v2/eval_files/run_self_test.sh
+NVIDIA GeForce RTX 5090, 32607 MiB, 2 MiB, 570.124.04
+gpfs            1.1P  434T  611T  42% /225010261
+=== deps ===
+/225010261/StarVLA/envs/starvla-cu128/lib/python3.10/site-packages/chumpy/__init__.py:11: FutureWarning: In the future `np.object` will be defined as the corresponding NumPy scalar.
+  from numpy import bool, int, float, complex, object, unicode, str, nan, inf
+/225010261/StarVLA/envs/starvla-cu128/lib/python3.10/site-packages/chumpy/__init__.py:11: FutureWarning: In the future `np.str` will be defined as the corresponding NumPy scalar.
+  from numpy import bool, int, float, complex, object, unicode, str, nan, inf
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/225010261/StarVLA/envs/starvla-cu128/lib/python3.10/site-packages/chumpy/__init__.py", line 11, in <module>
+    from numpy import bool, int, float, complex, object, unicode, str, nan, inf
+ImportError: cannot import name 'int' from 'numpy' (/225010261/StarVLA/envs/starvla-cu128/lib/python3.10/site-packages/numpy/__init__.py)
+=== ckpt sha256 ===
+0f3dcf899d2a35a1fb229af0cbbe5fd27843938a4968679a9e5b0e55367802cf  llm/model.safetensors
+498ea96407600c15553fceebddaf0d4aa3728e1af89674ed85deeaab82349591  mm_projector/model.safetensors
+ac2dee51fa74138f70a54b6bb81cb1a7f27ee64e464c69b91d5c7fb260cf7ab2  traj_decoder/model.safetensors
+de8670a93e897dbfcba37c8b3e155be019eeee72eff077cdf79b1c5b016f17cc  vision_tower/model.safetensors
+004853c16d2a0aae68fc456a899bfb8e8abc9a89bb5f8404182e6b2dc757735b  config.json
+=== release repo ===
+09645b9 fix path & add pydantic fix.
+hand_actuation_net.pth
+hand_mano_retarget_net.pth

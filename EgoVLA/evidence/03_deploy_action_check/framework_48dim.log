@@ -1,0 +1,24 @@
+08/30 [23:41:49] WARNING  | >> [*] [StarVLA]               base_framework.py:110
+                          Reproducibility notice: this                          
+                          repository is under active                            
+                          development. The latest code may                      
+                          not exactly reproduce every                           
+                          previously released HF                                
+                          checkpoint because code,                              
+                          configs, preprocessing, and                           
+                          evaluation behavior can change                        
+                          over time. For exact                                  
+                          reproduction, checkout the                            
+                          repository revision from the                          
+                          checkpoint's release/training                         
+                          time and use its own config.                          
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 11819.47it/s]
+Loading weights:   0%|          | 0/448 [00:00<?, ?it/s]Loading weights: 100%|██████████| 448/448 [00:00<00:00, 11823.64it/s]
+08/30 [23:41:50] INFO     | >> [*] EgoVLA mm_projector weights loaded VILA.py:77
+                          from checkpoint.                                      
+framework built in 8.4s
+framework type: EgoVLA
+pred shape: (1, 30, 48) finite: True
+inference latency: 0.785s
+pred mean/std/min/max: -0.010334714 0.35776597 -0.984375 0.87109375

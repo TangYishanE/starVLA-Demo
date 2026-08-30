@@ -18,6 +18,7 @@ StarVLA real-robot examples 的复现笔记、计划与证据归档。
 | --- | --- |
 | [RoboChallenge_Table30v2](RoboChallenge_Table30v2/) | ✅ P0–P4 全流程复现完成 |
 | [UnitreeG1_WholeBody](UnitreeG1_WholeBody/) | 📋 计划阶段 |
+| [EgoVLA](EgoVLA/) | 🟡 P1 零训练闭环大部分完成，P1d/e 阻塞于 MANO 许可证；P2 训练未执行 |
 
 ## 通用分析
 

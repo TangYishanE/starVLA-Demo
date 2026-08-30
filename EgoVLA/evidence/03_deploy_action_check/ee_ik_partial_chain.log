@@ -1,0 +1,26 @@
+08/30 [23:42:03] WARNING  | >> [*] [StarVLA]               base_framework.py:110
+                          Reproducibility notice: this                          
+                          repository is under active                            
+                          development. The latest code may                      
+                          not exactly reproduce every                           
+                          previously released HF                                
+                          checkpoint because code,                              
+                          configs, preprocessing, and                           
+                          evaluation behavior can change                        
+                          over time. For exact                                  
+                          reproduction, checkout the                            
+                          repository revision from the                          
+                          checkpoint's release/training                         
+                          time and use its own config.                          
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 12203.76it/s]
+Loading weights:   0%|          | 0/448 [00:00<?, ?it/s]Loading weights: 100%|██████████| 448/448 [00:00<00:00, 11796.84it/s]
+08/30 [23:42:04] INFO     | >> [*] EgoVLA mm_projector weights loaded VILA.py:77
+                          from checkpoint.                                      
+pred (30, 48)
+T_pelvis_optical ok
+left_ee (T,7) finite: (30, 7) True
+right_ee (T,7) finite: (30, 7) True
+IK left converged 5/30, right 0/30; mean err L=0.8818 R=1.5459
+left_ee pos range: [-0.42424264 -0.5118      0.26140147] [-0.0771816   0.26945     0.59783546]
+right_ee pos range: [-0.70714908 -0.08119176  0.35792616] [0.11067332 0.1952975  0.94067739]
