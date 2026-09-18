@@ -17,8 +17,10 @@ StarVLA real-robot examples 的复现笔记、计划与证据归档。
 | 项目 | 状态 |
 | --- | --- |
 | [RoboChallenge_Table30v2](RoboChallenge_Table30v2/) | ✅ P0–P4 全流程复现完成 |
-| [UnitreeG1_WholeBody](UnitreeG1_WholeBody/) | 📋 计划阶段 |
+| [UnitreeG1_WholeBody](UnitreeG1_WholeBody/) | ✅ 无真机数据–训练–服务–动作切分链路完成 |
 | [EgoVLA](EgoVLA/) | 🟡 P1 零训练闭环大部分完成，P1d/e 阻塞于 MANO 许可证；P2 训练未执行 |
+| [Realman](Realman/) | ✅ ACT + DiffusionPolicy 无真机 smoke 闭环完成 |
+| [Franka](Franka/) | ✅ 无真机数据–训练–策略服务动作语义验证完成 |
 
 ## 通用分析
 
