@@ -1,0 +1,4 @@
+torch: 2.7.1+cu128
+cuda: True
+h5py/pyarrow/cv2/av: 3.16.0 25.0.1 4.11.0 12.3.0
+python: Python 3.10.20

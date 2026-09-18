@@ -1,0 +1,30 @@
+100%|█████████▉| 998/1000 [38:12<00:04,  2.28s/it, data_times=0.000, model_times=2.396]/225010261/StarVLA/envs/starvla-cu128/lib/python3.10/site-packages/torchvision/io/_video_deprecation_warning.py:5: UserWarning: The video decoding and encoding capabilities of torchvision are deprecated from version 0.22 and will be removed in version 0.24. We recommend that you migrate to TorchCodec, where we'll consolidate the future decoding/encoding capabilities of PyTorch: https://github.com/pytorch/torchcodec
+  warnings.warn(
+
+100%|█████████▉| 999/1000 [38:14<00:02,  2.29s/it, data_times=0.000, model_times=2.396]
+100%|█████████▉| 999/1000 [38:14<00:02,  2.29s/it, data_times=0.000, model_times=2.311]/225010261/StarVLA/envs/starvla-cu128/lib/python3.10/site-packages/torchvision/io/_video_deprecation_warning.py:5: UserWarning: The video decoding and encoding capabilities of torchvision are deprecated from version 0.22 and will be removed in version 0.24. We recommend that you migrate to TorchCodec, where we'll consolidate the future decoding/encoding capabilities of PyTorch: https://github.com/pytorch/torchcodec
+  warnings.warn(
+
+100%|██████████| 1000/1000 [38:16<00:00,  2.29s/it, data_times=0.000, model_times=2.311]
+100%|██████████| 1000/1000 [38:16<00:00,  2.29s/it, data_times=0.000, model_times=2.295]08/30 [22:06:21] INFO     | >> Step 1000, Loss:             train_starvla.py:320
+                          {'action_dit_loss':                                   
+                          0.28229787945747375,                                  
+                          'timing/data':                                        
+                          0.00019080803031101823,                               
+                          'timing/model':                                       
+                          2.2945882409694605,                                   
+                          'learning_rate/qwen_vl_interface'                     
+                          : 2.0000000000000003e-06,                             
+                          'learning_rate/action_model':                         
+                          2e-05, 'epoch': 0.1})                                 
+✅ Checkpoint saved at ./results/Checkpoints/franka_qwenoft_smoke/checkpoints/steps_1000
+08/30 [22:06:24] INFO     | >> 📊 Saving accessed           train_starvla.py:298
+                          configuration...                                      
+                 INFO     | >> ✅ Configuration files saved train_starvla.py:301
+08/30 [22:06:27] INFO     | >> Training complete. Final     train_starvla.py:458
+                          model saved at                                        
+                          ./results/Checkpoints/franka_qwen                     
+                          oft_smoke/final_model                                 
+
+100%|██████████| 1000/1000 [38:22<00:00,  2.30s/it, data_times=0.000, model_times=2.295]
+                 INFO     | >> ... and that's all, folks!   train_starvla.py:492
